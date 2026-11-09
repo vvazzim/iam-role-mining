@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "iam-role-mining"
+version = "1.0.0"
+description = "Enterprise IAM/IGA Role Mining, Entitlement Analytics & Segregation of Duties (SoD) Audit Toolkit"
+readme = "README.md"
+authors = [{ name = "Wassim CHIKHI", email = "chikhimedwassim@gmail.com" }]
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.0.0",
+    "openpyxl>=3.1.0",
+    "streamlit>=1.30.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "ruff>=0.3.0",
+    "mypy>=1.8.0",
+]
+
+[project.scripts]
+iam-miner = "iam_role_mining.cli:main"
